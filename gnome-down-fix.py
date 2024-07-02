@@ -7,7 +7,8 @@ import os
 
 def handle_signal(*args):
     print("D-Bus signal received:", args)
-    subprocess.run(script_dir + "/kbdbl.sh down", shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    if args[-1][-1] == "StepDown":
+        subprocess.run(script_dir + "/kbdbl.sh down", shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 bus = SessionBus()
 loop = GLib.MainLoop()
