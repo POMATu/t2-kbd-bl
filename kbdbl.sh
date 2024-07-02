@@ -18,7 +18,7 @@ if [ -z "$1" ]; then
 	echo Usage:
 	echo kbdbl.sh up - sets keyboard light up one step
 	echo kbdbl.sh down - sets keyboard light down one step
-exit 255
+	exit 255
 fi
 
 
