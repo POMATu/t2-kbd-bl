@@ -3,9 +3,9 @@
 # path to your kbd brightness device
 DEVICE="/sys/class/leds/:white:kbd_backlight/brightness"
 
-# if you have passwordless sudo you can use sudo here otherwise you need to setup udev rules to allow your user to control brightness
+# if you have passwordless sudo you can uncomment sudo below otherwise you need to setup udev rules to allow your user to control brightness
 #if you dont need sudo - comment the following line
-SUDO="sudo"
+#SUDO="sudo"
 
 MIN=0
 MAX=14660
