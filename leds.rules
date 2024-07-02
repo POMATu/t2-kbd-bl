@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="leds", RUN+="/bin/chgrp GROUP_NAME $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness"

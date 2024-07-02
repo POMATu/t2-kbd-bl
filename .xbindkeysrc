@@ -39,8 +39,8 @@
 
 # Examples of commands:
 
-"xbindkeys_show" 
-  control+shift + q
+#"xbindkeys_show" 
+#  control+shift + q
 
 # set directly keycode (here control + f with my keyboard)
 #"xterm"
@@ -75,7 +75,7 @@
     m:0x0 + c:238
     XF86KbdBrightnessUp
 
-# Keycode 237 (XF86KbdBrightnessDown)
+ Keycode 237 (XF86KbdBrightnessDown)
 "/home/user/t2-kbd-bl/kbdbl.sh down"
     m:0x0 + c:237
     XF86KbdBrightnessDown
