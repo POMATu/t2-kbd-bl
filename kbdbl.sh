@@ -35,6 +35,7 @@ if [ "$1" = "up" ]; then
 	NEXT=$(($CUR + $STEP))
 	echo "Next: $CUR"
 	echo $NEXT | $SUDO tee "$DEVICE"
+	exit $?
 fi
 
 if [ "$1" = "down" ]; then
@@ -46,5 +47,6 @@ if [ "$1" = "down" ]; then
 	fi
 	echo "Next: $CUR"
 	echo $NEXT | $SUDO tee "$DEVICE"
+	exit $?
 fi
 
