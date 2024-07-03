@@ -1,4 +1,4 @@
-~/.config/systemd/$USER/gnome-dbus-fix.service
+~/.config/systemd/user/gnome-dbus-fix.service
 
 systemctl --user enable gnome-dbus-fix.service
 
