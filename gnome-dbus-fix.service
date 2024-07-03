@@ -1,5 +1,5 @@
 [Unit]
-Description=gnome-down-fix
+Description=gnome-dbus-fix
 
 [Service]
 Type=simple
