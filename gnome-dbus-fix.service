@@ -1,0 +1,11 @@
+[Unit]
+Description=gnome-down-fix
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/user/t2-kbd-bl/gnome-dbus-fix.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
