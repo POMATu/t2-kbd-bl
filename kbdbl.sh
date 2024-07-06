@@ -1,7 +1,14 @@
 #!/bin/bash
 
 # path to your kbd brightness device
-DEVICE="/sys/class/leds/:white:kbd_backlight/brightness"
+for i in /sys/class/leds/:white:kbd_backlight/brightness \
+         /sys/class/leds/apple::kbd_backlight/brightness
+do
+  if [[ -f ${i} ]]
+  then
+  DEVICE=${i}
+  fi
+done
 
 # if you have passwordless sudo you can uncomment sudo below otherwise you need to setup udev rules to allow your user to control brightness
 #if you dont need sudo - comment the following line
