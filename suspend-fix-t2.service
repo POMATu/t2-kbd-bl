@@ -9,6 +9,8 @@ Type=oneshot
 RemainAfterExit=yes
 
 ExecStartPre=+/bin/sh -c '/home/user/t2-kbd-bl/kbdbl.sh backup || /bin/true'
+# needs to be killed everytime because randomly works or doesnt work and conflicts with python
+ExecStart=+/usr/bin/modprobe -r hid_appletb_kbd
 ExecStart=+/usr/bin/modprobe -r apple-touchbar
 ExecStart=/usr/bin/rmmod -f apple-bce
 
