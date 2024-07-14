@@ -1,3 +1,5 @@
+pacman -S python-pydbus
+
 ~/.config/systemd/user/gnome-dbus-fix.service
 
 systemctl --user enable gnome-dbus-fix.service
