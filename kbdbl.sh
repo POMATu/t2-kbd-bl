@@ -21,7 +21,7 @@ SUDO="sudo"
 MIN=0
 MAX=14660
 STEPS=4
-BACKUP=/tmp/kbd.bl
+BACKUP=/home/user/.kbdbl
 
 # Calculate step size
 STEP=$(( ($MAX - $MIN) / $STEPS ))
