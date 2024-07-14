@@ -1,0 +1,19 @@
+[Unit]
+Description=Restart Touch Bar and Network Modules
+After=multi-user.target
+Wants=multi-user.target
+
+[Service]
+Type=oneshot
+# killing backlight hid option on start to prevent double-exectuion because im using python workaround for gnome
+ExecStartPre=+/usr/bin/modprobe -r hid_appletb_kbd
+# actually reloading touchbar unconditionally
+ExecStart=/usr/bin/modprobe -r apple-touchbar
+ExecStart=+/usr/bin/rmmod -f apple-bce
+ExecStart=+/usr/bin/sleep 1
+ExecStart=+/usr/bin/modprobe apple-bce
+# it will get loaded automatically so no need to load it explicitly
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

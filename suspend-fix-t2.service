@@ -1,0 +1,19 @@
+[Unit]
+Description=Disable and Re-Enable Apple BCE Module (and Wi-Fi)
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+User=root
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStartPre=+/bin/sh -c '/home/user/t2-kbd-bl/kbdbl.sh backup || /bin/true'
+ExecStart=+/usr/bin/modprobe -r apple-touchbar
+ExecStart=/usr/bin/rmmod -f apple-bce
+
+ExecStop=/usr/bin/modprobe apple-bce
+ExecStop=+/home/user/t2-kbd-bl/kbdbl.sh restore
+
+[Install]
+WantedBy=sleep.target
