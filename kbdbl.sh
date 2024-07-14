@@ -30,14 +30,15 @@ if [ -z "$1" ]; then
 	echo Usage:
 	echo kbdbl.sh up - sets keyboard light up one step
 	echo kbdbl.sh down - sets keyboard light down one step
+	echo kbdbl.sh save - saves kbd backlight value
+	echo kbdbl.sh restore - restores kbd backlight value while awaiting for the device to show up
 	exit 255
 fi
 
 
 if [ "$1" == "restore" ];
 then
-echo RESTORING KBD
-
+echo Waiting for device to show up
 
 count=0
 while [[ -z "$DEVICE" && $count -lt 5 ]]; do
@@ -49,9 +50,9 @@ done
 
 
 echo RESTORING KBD to $DEVICE from $BACKUP
-cat "$BACKUP"
 
         if [ -f "$BACKUP" ]; then
+		sleep 1
                 cat "$BACKUP" | $SUDO tee "$DEVICE"
 	else
 		echo cant find backup
